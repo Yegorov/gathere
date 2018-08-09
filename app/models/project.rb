@@ -1,7 +1,11 @@
 class Project < ApplicationRecord
+  include Sizeable
+
   has_many :tasks, dependent: :destroy
 
   validates :name, presence: true
+
+  delegate :size, to: :total_size
 
   def incomplete_tasks
     tasks.reject(&:complete?)
