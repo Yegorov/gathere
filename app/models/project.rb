@@ -5,8 +5,6 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
 
-  delegate :size, to: :total_size
-
   def incomplete_tasks
     tasks.reject(&:complete?)
   end
@@ -43,4 +41,6 @@ class Project < ApplicationRecord
   def self.velocity_length_in_days
     21
   end
+
+  alias_method :size, :total_size
 end
