@@ -55,14 +55,15 @@ RSpec.describe Project do
   describe "estimate" do
     let(:project) { FactoryBot.build_stubbed(:project,
       tasks: [newly_done, old_done, small_not_done, large_not_done]) }
+
     let(:newly_done) { FactoryBot.build_stubbed(:task,
-      size: 3, completed_at: 1.day.ago) }
+      :newly_complete) }
     let(:old_done) { FactoryBot.build_stubbed(:task,
-      size: 2, completed_at: 6.months.ago) }
+      :long_complete, size: 2) }
     let(:small_not_done) { FactoryBot.build_stubbed(:task,
-      size: 1) }
-    let(:large_not_done) { TFactoryBot.build_stubbed(:task,
-      size: 4) }
+      :small) }
+    let(:large_not_done) { FactoryBot.build_stubbed(:task,
+      :large) }
 
     it "can calculate total size" do
       expect(project).to be_of_size(10)
