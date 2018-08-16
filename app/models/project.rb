@@ -1,8 +1,8 @@
 class Project < ApplicationRecord
   include Sizeable
 
-  has_many :tasks, dependent: :destroy
-  has_many :ordered_tasks, -> { order "project_order ASC"}, class_name: "Task"
+  has_many :tasks, -> { order "project_order ASC" },
+    dependent: :destroy, inverse_of: :project
 
   validates :name, presence: true
 
@@ -45,7 +45,7 @@ class Project < ApplicationRecord
 
   def next_task_order
     return 1 if tasks.empty?
-    (ordered_tasks.last.project_order || tasks.size) + 1
+    (tasks.last.project_order || tasks.size) + 1
   end
 
   alias_method :size, :total_size

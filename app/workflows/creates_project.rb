@@ -27,7 +27,6 @@ class CreatesProject
     task_string.split("\n").map do |one_task|
       title, size_string = one_task.split(":")
       Task.new(title: title, size: size_as_integer(size_string))
-      #Task.new(title: title, size: size_as_integer(size_string), project_order: project.next_task_order)
     end
   end
 
