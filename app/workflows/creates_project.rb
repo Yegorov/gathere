@@ -19,6 +19,7 @@ class CreatesProject
 
   def create
     build
+
     result = project.save
     @success = result
   end

@@ -2,8 +2,12 @@ class TasksController < ApplicationController
   before_action :load_task, only: %i[up down]
 
   def create
-    @task = Task.create(params[:task].permit(:project_id, :title, :size))
-    redirect_to(@task.project)
+    # @task = Task.create(params[:task].permit(:project_id, :title, :size))
+    # redirect_to(@task.project)
+    @project = Project.find(params[:task][:project_id])
+    @project.tasks.create(
+    task_params.merge(project_order: @project.next_task_order))
+    redirect_to(@project)
   end
 
   def up
