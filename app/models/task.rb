@@ -22,12 +22,12 @@ class Task < ApplicationRecord
 
   def first_in_project?
     return false unless project
-    project.tasks.first == self
+    project.ordered_tasks.first == self
   end
 
   def last_in_project?
     return false unless project
-    project.tasks.last == self
+    project.ordered_tasks.last == self
   end
 
   def previous_task

@@ -46,7 +46,7 @@ RSpec.describe Task do
 
   describe "order", aggregate_failures: true do
     let(:project) { create(:project, name: "Project") }
-    let(:first) { project.tasks.create!(project_order: 1) }
+    let!(:first) { project.tasks.create!(project_order: 1) }
     let!(:second) { project.tasks.create!(project_order: 2) }
     let!(:third) { project.tasks.create!(project_order: 3) }
 
