@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'webpacker', '~> 3.5'
 gem "foreman"
-
+gem 'watir'
 
 
 # Reduces boot times through caching; required in config/boot.rb
