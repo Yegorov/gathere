@@ -6,18 +6,26 @@ class TasksController < ApplicationController
     # redirect_to(@task.project)
     @project = Project.find(params[:task][:project_id])
     @project.tasks.create(
-    task_params.merge(project_order: @project.next_task_order))
+      task_params.merge(project_order: @project.next_task_order))
     redirect_to(@project)
   end
 
   def up
     @task.move_up
-    redirect_to(@task.project)
+    respond_to do |format|
+      format.html { redirect_to(@task.project) }
+      format.json { head :ok }
+    end
   end
+
   def down
     @task.move_down
-    redirect_to(@task.project)
+    respond_to do |format|
+      format.html { redirect_to(@task.project) }
+      format.json { head :ok }
+    end
   end
+
 
   private
   def load_task

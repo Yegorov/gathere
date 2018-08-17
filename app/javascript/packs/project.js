@@ -1,6 +1,7 @@
 import {ProjectLoader} from "../../../app/javascript/packs/project_loader.js"
 import {Task} from "../../../app/javascript/packs/task.js"
-//import {ProjectTable} from "../../../app/javascript/packs/project_table.js"
+import {ProjectTable} from "../../../app/javascript/packs/project_table.js"
+
 
 export class Project {
   constructor(id) {
@@ -25,17 +26,20 @@ export class Project {
   appendTask(task) {
     this.tasks.push(task)
     task.project = this
-    task.index = this.tasks.length - 1
   }
+
   firstTask() {
     return this.tasks[0]
   }
+
   lastTask() {
     return this.tasks[this.tasks.length - 1]
   }
+
   swapTasksAt(index1, index2) {
     const temp = this.tasks[index1]
     this.tasks[index1] = this.tasks[index2]
     this.tasks[index2] = temp
+    new ProjectTable(this, ".task-table").insert()
   }
 }

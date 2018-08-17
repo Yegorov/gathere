@@ -2,6 +2,7 @@ export class TaskUpdater {
   constructor(task) {
     this.task = task
   }
+
   update(upOrDown) {
     const url = `/tasks/${this.task.id}/${upOrDown}.json`
     $.ajax({
@@ -12,9 +13,7 @@ export class TaskUpdater {
           $('meta[name="csrf-token"]').attr("content")
         )
       },
-      data: {
-        _method: "PATCH"
-      },
+      data: { _method: "PATCH" },
       type: "POST"
     })
   }

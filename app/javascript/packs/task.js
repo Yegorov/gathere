@@ -10,7 +10,7 @@ export class Task {
   }
 
   index() {
-    return this.projects.tasks.indexOf(this)
+    return this.project.tasks.indexOf(this)
   }
 
   isFirst() {
@@ -19,24 +19,27 @@ export class Task {
     }
     return false
   }
+
   isLast() {
     if (this.project) {
       return this.project.lastTask() === this
     }
     return false
   }
+
   moveUp() {
     if (this.isFirst()) {
       return
     }
-    this.project.swapTasksAt(this.index - 1, this.index)
+    this.project.swapTasksAt(this.index() - 1, this.index())
     this.updater.update("up")
   }
+
   moveDown() {
     if (this.isLast()) {
       return
     }
-    this.project.swapTasksAt(this.index, this.index + 1)
+    this.project.swapTasksAt(this.index(), this.index() + 1)
     this.updater.update("down")
   }
 }
