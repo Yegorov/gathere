@@ -48,6 +48,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'cucumber-rails', require: false
   gem 'fuubar'
+
+  gem "mocha", require: false
 end
 
 group :development do

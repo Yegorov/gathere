@@ -9,6 +9,6 @@ class ProjectPresenter < SimpleDelegator
 
   def name_with_status
     dom_class = on_schedule? ? "in_schedule" : "behind_schedule"
-    "<span class='#{dom_class}"'>#{name}</span>"
+    "<span class='#{dom_class}'>#{name}</span>"
   end
 end
