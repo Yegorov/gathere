@@ -11,12 +11,14 @@ RSpec.describe "task controller requests" do
 
     it "can add a task to a project the user can see", :js do
       Role.create(user: user, project: project)
-      post(tasks_path, params: { task: {name: "New Task", size: "3" }} )
+      post(tasks_path, params: { task: {project_id: project.id,
+          name: "New Task", size: "3" }} )
       expect(request).to redirect_to(project_path(project))
     end
 
     it "can not add a task to a project the user can see", :js do
-      post(tasks_path, params: { task: {name: "New Task", size: "3" }} )
+      post(tasks_path, params: { task: {project_id: project.id,
+          name: "New Task", size: "3" }} )
       expect(request).to redirect_to(new_user_session_path)
     end
   end
