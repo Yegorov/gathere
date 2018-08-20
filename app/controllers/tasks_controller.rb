@@ -5,6 +5,9 @@ class TasksController < ApplicationController
     # @task = Task.create(params[:task].permit(:project_id, :title, :size))
     # redirect_to(@task.project)
     @project = Project.find(params[:task][:project_id])
+    unless current_user.can_view?(@project)
+      redirect_to new_user_session_path and return
+    end
     @project.tasks.create(
       task_params.merge(project_order: @project.next_task_order))
     redirect_to(@project)

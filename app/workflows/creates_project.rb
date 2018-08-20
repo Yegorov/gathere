@@ -1,9 +1,10 @@
 class CreatesProject
-  attr_accessor :name, :project, :task_string
+  attr_accessor :name, :project, :task_string, :users
 
-  def initialize(name: "", task_string: "")
+  def initialize(name: "", task_string: "", users: [])
     @name = name
     @task_string = task_string
+    @users = users
     @success = false
   end
 
@@ -14,6 +15,7 @@ class CreatesProject
   def build
     self.project = Project.new(name: name)
     project.tasks = convert_string_to_tasks
+    project.users = users
     project
   end
 

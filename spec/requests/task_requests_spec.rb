@@ -6,6 +6,10 @@ RSpec.describe "task requests" do
     ActionMailer::Base.deliveries.clear
   end
 
+  before(:example) do
+    login_as(create(:user))
+  end
+
   let(:project) { create(:project) }
   let(:task) { create(
     :task, project: project, title: "Learn how to test mailers", size: 3) }

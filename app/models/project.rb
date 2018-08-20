@@ -3,6 +3,8 @@ class Project < ApplicationRecord
 
   has_many :tasks, -> { order "project_order ASC" },
     dependent: :destroy, inverse_of: :project
+  has_many :roles, dependent: :destroy
+  has_many :users, through: :roles
 
   validates :name, presence: true
 
@@ -46,6 +48,10 @@ class Project < ApplicationRecord
   def next_task_order
     return 1 if tasks.empty?
     (tasks.last.project_order || tasks.size) + 1
+  end
+
+  def self.all_public
+    where(public: true)
   end
 
   alias_method :size, :total_size
