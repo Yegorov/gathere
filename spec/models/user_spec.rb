@@ -65,4 +65,17 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "avatars" do
+    let(:user) { create(:user) }
+    let(:fake_adapter) { instance_double(AvatarAdapter) }
+
+    it "can get a twitter avatar URL" do
+      allow(AvatarAdapter).to receive(:new).with(user).and_return(fake_adapter)
+      allow(fake_adapter).to receive(:image_url).and_return("fake_url")
+      expect(user.avatar_url).to eq("fake_url")
+      expect(fake_adapter).to have_received(:image_url)
+      expect(AvatarAdapter).to have_received(:new)
+    end
+  end
+
 end

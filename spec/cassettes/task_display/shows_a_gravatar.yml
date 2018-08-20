@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic RnVpQ09iOWtucDVVU3A2U2kxcmxBc2NIYTpXWWNaWmRyUEJ0ZU80VUNianFGRGZtOFNha21lVklMZ08zdEo3U0ZBRHdxTGpuUE5zSg==
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '155'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 20 Aug 2018 14:48:51 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Mon, 20 Aug 2018 14:48:51 GMT
+      Ml:
+      - A
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A153477653123480506; Expires=Wed, 19 Aug 2020 14:48:51 GMT; Path=/;
+        Domain=.twitter.com
+      - personalization_id="v1_tI4anxGxTIvD1XLZLanlHA=="; Expires=Wed, 19 Aug 2020
+        14:48:51 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - e66d6a602d71310ca46a9ca0dbc1b288
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '130'
+      X-Transaction:
+      - 00d51bfb00b19f60
+      X-Tsa-Request-Body-Time:
+      - '1'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block; report=https://twitter.com/i/xss_report
+    body:
+      encoding: UTF-8
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAALVzYQAAAAAAIItU1SgTX8I%2B7Q3Cl3mqvuZiAAc%3D0AtbuGPnZgRlOHbTIk3JudxSGqXxgfkwpMG367Rtyw6GGLwO6N"}'
+    http_version: 
+  recorded_at: Mon, 20 Aug 2018 14:48:51 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/users/show.json?screen_name=noelrap
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Authorization:
+      - Bearer AAAAAAAAAAAAAAAAAAAAALVzYQAAAAAAIItU1SgTX8I%2B7Q3Cl3mqvuZiAAc%3D0AtbuGPnZgRlOHbTIk3JudxSGqXxgfkwpMG367Rtyw6GGLwO6N
+      Connection:
+      - close
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '2732'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 20 Aug 2018 14:48:51 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Mon, 20 Aug 2018 14:48:51 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A153477653170700824; Expires=Wed, 19 Aug 2020 14:48:51 GMT; Path=/;
+        Domain=.twitter.com
+      - personalization_id="v1_gOwWmHW2sf/WV7BbIgUZCA=="; Expires=Wed, 19 Aug 2020
+        14:48:51 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read
+      X-Connection-Hash:
+      - a5b00be4e6385a93e1a028699f130a2a
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '900'
+      X-Rate-Limit-Remaining:
+      - '899'
+      X-Rate-Limit-Reset:
+      - '1534777431'
+      X-Response-Time:
+      - '161'
+      X-Transaction:
+      - 002b508f0008dec4
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block; report=https://twitter.com/i/xss_report
+    body:
+      encoding: UTF-8
+      string: '{"id":1515231,"id_str":"1515231","name":"Noel Rappin","screen_name":"noelrap","location":"Chicago
+        IL","profile_location":null,"description":"Noel Rappin is a developer at Table
+        XI. He is the author of Take My Money: Accepting Payment on the Web and Rails
+        5 Test Prescriptions","url":"http:\/\/t.co\/2Mt0aaFfGL","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/2Mt0aaFfGL","expanded_url":"http:\/\/www.noelrappin.com","display_url":"noelrappin.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":2725,"friends_count":797,"listed_count":222,"created_at":"Mon
+        Mar 19 15:10:21 +0000 2007","favourites_count":882,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":13976,"lang":"en","status":{"created_at":"Fri
+        Aug 17 01:53:49 +0000 2018","id":1030271448898785280,"id_str":"1030271448898785280","text":"@soulcutter
+        @davetron5000 Yeah, I think this is an opportunity I\u2019ll save for someone
+        else\u2026","truncated":false,"entities":{"hashtags":[],"symbols":[],"user_mentions":[{"screen_name":"soulcutter","name":"soulcutter","id":16210384,"id_str":"16210384","indices":[0,11]},{"screen_name":"davetron5000","name":"David
+        Copeland","id":5660222,"id_str":"5660222","indices":[12,25]}],"urls":[]},"source":"\u003ca
+        href=\"http:\/\/tapbots.com\/tweetbot\" rel=\"nofollow\"\u003eTweetbot for
+        i\u039fS\u003c\/a\u003e","in_reply_to_status_id":1030264075526254592,"in_reply_to_status_id_str":"1030264075526254592","in_reply_to_user_id":16210384,"in_reply_to_user_id_str":"16210384","in_reply_to_screen_name":"soulcutter","geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"},"contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"9AE4E8","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/950537388518006785\/Wusx_fRo_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/950537388518006785\/Wusx_fRo_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/1515231\/1520002482","profile_link_color":"0000FF","profile_sidebar_border_color":"87BC44","profile_sidebar_fill_color":"E0FF92","profile_text_color":"000000","profile_use_background_image":true,"has_extended_profile":true,"default_profile":false,"default_profile_image":false,"following":null,"follow_request_sent":null,"notifications":null,"translator_type":"none"}'
+    http_version: 
+  recorded_at: Mon, 20 Aug 2018 14:48:51 GMT
+recorded_with: VCR 4.0.0

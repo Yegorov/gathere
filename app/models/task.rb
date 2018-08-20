@@ -3,6 +3,8 @@ class Task < ApplicationRecord
 
   belongs_to :project
 
+  belongs_to :user, required: false
+
   def mark_completed(date = Time.current)
     self.completed_at = date
   end

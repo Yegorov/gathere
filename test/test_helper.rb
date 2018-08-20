@@ -22,6 +22,12 @@ module ActionDispatch
   end
 end
 
+VCR.configure do |c|
+  c.cassette_library_dir = "test/vcr"
+  c.hook_into :webmock
+  c.ignore_localhost = true
+end
+
 def assert_select_string(string, *selectors, &block)
   doc_root = Nokogiri::HTML::Document.parse(string).root
   assert_select(doc_root, *selectors, &block)

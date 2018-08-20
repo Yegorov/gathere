@@ -37,6 +37,7 @@ gem 'webpacker', '~> 3.5'
 gem "foreman"
 gem 'watir'
 gem "devise"
+gem 'twitter'
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -71,6 +72,8 @@ group :test do
   gem 'chromedriver-helper'
 
   gem 'database_cleaner'
+  gem "vcr"
+  gem "webmock"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

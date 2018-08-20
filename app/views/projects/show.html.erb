@@ -4,6 +4,18 @@
 
 <div class="task-table" data-project="<%= @project.id %>"></div>
 
+
+<div id="task_1">
+  <td class="completed">
+    <% task = @project.tasks.first %>
+    <% if task.complete? %>
+      <%= task.user.email %>
+      <%= task.completed_at.to_s %>
+      <img src="<%= task.user.avatar_url %>" />
+    <% end %>
+  </td>
+</div>
+
 <h3>New Task</h3>
   <%= form_for Task.new(project_id: @project.id) do |f| %>
   <%= f.hidden_field :project_id %>
