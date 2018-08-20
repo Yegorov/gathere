@@ -10,6 +10,18 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+module ActionController
+  class TestCase
+    include Devise::Test::ControllerHelpers
+  end
+end
+
+module ActionDispatch
+  class IntegrationTest
+    include Devise::Test::IntegrationHelpers
+  end
+end
+
 def assert_select_string(string, *selectors, &block)
   doc_root = Nokogiri::HTML::Document.parse(string).root
   assert_select(doc_root, *selectors, &block)
