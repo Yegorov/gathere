@@ -52,6 +52,11 @@ group :development, :test do
   gem 'fuubar'
 
   gem "mocha", require: false
+
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem "pry-stack_explorer"
+  gem "pry-rescue"
 end
 
 group :development do

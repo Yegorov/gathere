@@ -17,5 +17,8 @@ RSpec.describe "task display" do
       expect(page).to have_selector(".completed", text: user.email)
       expect(page).to have_selector("img[src='#{url}']")
     end
+
+    # save_and_open_page
+    # save_screenshot
   end
 end
