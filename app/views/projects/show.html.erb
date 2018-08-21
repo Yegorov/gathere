@@ -8,7 +8,7 @@
 <div id="task_1">
   <td class="completed">
     <% task = @project.tasks.first %>
-    <% if task.complete? %>
+    <% if task && task.complete? %>
       <%= task.user.email %>
       <%= task.completed_at.to_s %>
       <img src="<%= task.user.avatar_url %>" />
